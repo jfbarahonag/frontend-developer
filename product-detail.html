@@ -24,25 +24,132 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0px;
         }
+
+        .product-detail {
+            height: 100%;
+            margin: 0;
+            display: grid;
+            width: 300px;
+            height: 100%;
+            grid-template-rows: auto 1fr auto;
+            place-content: center;
+            position: absolute;
+            right: 0;
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+        }
+
+        .product-image img:nth-child(1) {
+            padding: 8px;
+            background-color: var(--white);
+            position: absolute;
+            border-radius: 50%;
+            left: 8px;
+            top: 8px;
+            border: 1px solid var(--very-light-pink);
+            cursor: pointer;
+        }
+
+        .product-image img:nth-child(2) {
+            height: 360px;
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+        }
+
+        .product-image-carousel {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .product-image-carousel .dot {
+            padding: 4px;
+            background-color: var(--text-input-field);
+            border-radius: 50%;
+            margin: 4px;
+            cursor: pointer;
+        }
+        
+        .product-image-carousel .dot:hover {
+            background-color: var(--very-light-pink);
+        }
+
+        .product-info {
+            margin-left: 16px;
+        }
+
+        .product-info div p {
+            margin: 0;
+            margin-bottom: 4px;
+            padding: 0;
+            color: var(--very-light-pink);
+            font-size: var(--md);
+        }
+        
+        .product-info > div > p {
+            font-weight: bold;
+            color: var(--black);
+        }
+        
+        .product-detail .product-info p:nth-child(2) {
+            color: var(--very-light-pink);
+            margin: 0;
+            margin-bottom: 16px;
+            font-size: var(--sm);
+        }
+
+        .primary-button {
+            display: flex;
+            background: var(--hospital-green);
+            border: none;
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            margin-bottom: 32px;
+            border-radius: 8px;
+            padding: 12px 0;
+        }
+
+        .primary-button img {
+            filter: invert(1);
+            fill: var(--white);
+            margin-right: 8px;
+        }
+        
+        .primary-button span {
+            font-size: var(--md);
+        }
+
+        @media (max-width: 640px) {
+            .product-detail {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <aside class="product-detail">
-        <img src="./icons/icon_close.png" alt="close">
         <div class="product-image">
+            <img src="./icons/icon_close.png" alt="close">
             <img src="https://images.pexels.com/photos/360624/pexels-photo-360624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="item">
-            <div class="carousel">
+            <div class="product-image-carousel">
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
         </div>
         <div class="product-info">
-            <p>$35,00</p>
-            <p>Bike</p>
+            <div>
+                <p>$35,00</p>
+                <p>Bike</p>
+            </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quidem dolorem laudantium blanditiis, quae ad! Eaque, numquam doloribus culpa in saepe laborum magni laboriosam consequatur quae possimus, expedita reprehenderit quas?</p>
         </div>
-        <button class="product-button">
+        <button class="primary-button">
             <img src="./icons/icon_shopping_cart.svg" alt="cart icon">
             <span>Add to cart</span>
         </button>
